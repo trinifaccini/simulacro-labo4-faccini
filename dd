@@ -1,0 +1,29 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    
+    <p>
+        <mat-form-field>
+        <input type="email" matInput placeholder="Email" formControlName="email">
+        </mat-form-field>
+    </p>
+
+    <p>
+        <mat-form-field>
+        <input type="password" matInput placeholder="Contraseña" formControlName="password">
+        </mat-form-field>
+    </p>
+
+    
+    @if (errorMessage){
+        <p class="error">
+            {{ errorMessage }}
+        </p>
+    }
+
+    <div class="buttons">
+        <button type="button" mat-fab aria-label="Example icon button with a delete icon" (click)="autocompleteUser()">
+            <mat-icon>person1</mat-icon>
+        </button>
+        <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Iniciar sesion</button>
+    </div>
+
+</form>

@@ -1,0 +1,79 @@
+<div class="bg-light">
+
+    <div class="container">
+      <main>
+        <div class="py-5 text-center">
+          <h2>Alta actor</h2>
+          <p class="lead">Completa los campos para dar de alta un actor o actriz.</p>
+        </div>
+
+        <div class="row g-5">
+          <div class="col-md-5 col-lg-4 order-md-last">
+            <app-tabla-paises 
+            [paises]="listadoPaises" 
+            (paisSeleccionado)="seleccionarPais($event)">
+          </app-tabla-paises>
+          </div>
+
+          <div class="col-md-7 col-lg-8">
+
+            <h4 class="mb-3">Datos</h4>
+
+            <form [formGroup]="formActor" (ngSubmit)="onSubmit()">
+
+              <div class="row g-3">
+                <div class="col-sm-6">
+                  <label for="firstName" class="form-label">Nombre</label>
+                  <input type="text" class="form-control" id="firstName" placeholder="" value="" formControlName="nombre">
+                </div>
+
+                <div class="col-sm-6">
+                  <label for="lastName" class="form-label">Apellido</label>
+                  <input type="text" class="form-control" id="lastName" placeholder="" value="" formControlName="apellido">
+                </div>
+
+                <div class="col-6">
+                  <label for="address2" class="form-label">Edad</label>
+                  <input type="number" class="form-control" id="address2" placeholder="42" formControlName="edad">
+                </div>
+
+                <div class="col-6">
+                    <label for="address2" class="form-label">Documento</label>
+                    <input type="text" class="form-control" id="address2" placeholder="43243054" formControlName="dni">
+                </div>
+
+              </div>
+
+              <hr class="my-4">
+
+              <button class="w-100 btn btn-primary btn-lg" type="submit">Confirmar alta</button>
+            </form>
+          </div>
+        </div>
+      </main>
+
+     
+    </div>
+
+
+    <!-- Form validation script -->
+    <script>
+      (function () {
+        'use strict'
+
+        var forms = document.querySelectorAll('.needs-validation')
+
+        Array.prototype.slice.call(forms)
+          .forEach(function (form) {
+            form.addEventListener('submit', function (event) {
+              if (!form.checkValidity()) {
+                event.preventDefault()
+                event.stopPropagation()
+              }
+
+              form.classList.add('was-validated')
+            }, false)
+          })
+      })()
+    </script>
+</div>

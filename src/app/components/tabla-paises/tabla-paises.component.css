@@ -1,0 +1,9 @@
+.scrollable-list {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.selected {
+background-color: #007bff; /* Fondo azul */
+color: #ffffff;           /* Texto blanco */
+}

@@ -1,0 +1,95 @@
+<div class="bg-light">
+
+    <div class="container">
+      <main>
+        <div class="py-5 text-center">
+          <h2>Alta película</h2>
+          <p class="lead">Completa los campos para dar de alta una película</p>
+        </div>
+
+        <div class="row g-5">
+          <div class="col-md-5 col-lg-4 order-md-last">
+
+            <app-tabla-actores 
+              [actores]="listadoActores" 
+              (actorSeleccionado)="seleccionarActor($event)">
+            </app-tabla-actores>
+
+          </div>
+
+          <div class="col-md-7 col-lg-8">
+
+            <h4 class="mb-3">Datos</h4>
+
+            <form [formGroup]="formPelicula" (ngSubmit)="onSubmit()">
+
+              <div class="row g-3">
+
+                <div class="col-sm-4">
+                  <label for="id" class="form-label">ID</label>
+                  <input type="number" class="form-control" id="ID" placeholder="123" value="" formControlName="id">
+                  <div class="invalid-feedback">
+                    ID válido requerido
+                  </div>
+                </div>
+
+                <div class="col-sm-8">
+                    <label for="nombre" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="nombre" placeholder="" value="" formControlName="nombre">
+                    <div class="invalid-feedback">
+                      Nombre válido requerido
+                    </div>
+                </div>
+                        
+                <div class="col-md-4">
+                  <label for="tipo" class="form-label">Tipo</label>
+                  <select class="form-select" id="tipo" formControlName="tipo">
+                    <option value="">Seleccioná...</option>
+                    <option value="terror">Terror</option> 
+                    <option value="comedia">Comedia</option>
+                    <option value="amor">Amor</option>
+                    <option value="otros">Otros</option>
+                  </select>
+                  <div class="invalid-feedback">
+                    Por favor selecciona un tipo válido
+                  </div>
+                </div>
+
+                <div class="col-sm-4">
+                    <label for="fecha" class="form-label">Fecha de estreno</label>
+                    <input type="date" class="form-control" id="fecha" placeholder="" value="" formControlName="fecha_estreno">
+                    <div class="invalid-feedback">
+                      Fecha de estreno requerida
+                    </div>
+                </div>
+
+                <div class="col-sm-4">
+                    <label for="publico" class="form-label">Cantidad de público</label>
+                    <input type="number" class="form-control" id="publico" placeholder="" value="" formControlName="cantidad_publico">
+                    <div class="invalid-feedback">
+                      Cantidad de publico válido requerido
+                    </div>
+                </div>
+
+                <div class="col-sm-9">
+                    <label for="publico" class="form-label">Imagen de la película</label>
+                    <input type="text" class="form-control" id="img" placeholder="" value="" formControlName="imagen">
+                    <div class="invalid-feedback">
+                      Imagen inválida
+                    </div>
+                </div>
+
+              </div>
+
+              <hr class="my-4">
+
+              <button class="w-100 btn btn-primary btn-lg" type="submit">Confirmar alta</button>
+            
+            </form>
+          </div>
+        </div>
+
+      </main>
+    </div>
+
+</div>

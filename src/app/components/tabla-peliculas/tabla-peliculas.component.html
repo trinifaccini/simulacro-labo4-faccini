@@ -1,0 +1,20 @@
+<div class="container-fluid py-5">
+    <h1 class="display-5 fw-bold">Listado</h1>
+
+    <div class="col-md-5 col-lg-4 order-md-last">
+      <h4 class="d-flex justify-content-between align-items-center mb-3">
+        <span class="badge bg-primary rounded-pill">{{ peliculas.length }}</span>
+      </h4>
+      <ul class="list-group mb-3">
+        <li 
+          *ngFor="let pelicula of peliculas" 
+          class="list-group-item d-flex justify-content-between lh-sm" 
+          (click)="seleccionarPelicula(pelicula)"
+        >
+          <div>
+            <h6 class="my-0">{{ pelicula.nombre }} </h6>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>

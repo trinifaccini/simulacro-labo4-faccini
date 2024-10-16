@@ -1,0 +1,30 @@
+<main class="container py-4">
+    <header class="pb-3 mb-4 border-bottom">
+      <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
+        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="32" class="me-2" viewBox="0 0 118 94" role="img">
+          <title>Películas</title>
+        </svg>
+        <span class="fs-4">Acá vas encontrar un listado de todas las películas de nuestra base de datos</span>
+      </a>
+    </header>
+  
+    <div class="p-5 mb-4 bg-light rounded-3">
+      <app-tabla-peliculas 
+        [peliculas]="listaPeliculas" 
+        (peliculaSeleccionada)="mostrarDetalle($event)">
+      </app-tabla-peliculas>
+    </div>
+  
+    <div class="row align-items-md-stretch">
+      <div class="col-md-6">
+        <div class="h-100 p-5 text-white bg-dark rounded-3">
+          <h2>Detalle película seleccionada</h2>
+          <app-detalle-pelicula 
+          [pelicula]="peliculaSeleccionada">
+        </app-detalle-pelicula>
+        </div>
+      </div>
+    </div>
+  
+    
+  </main>
