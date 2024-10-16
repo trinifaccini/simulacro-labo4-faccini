@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 export class ApiRequestService {
   http = inject(HttpClient);
 
-  private apiUrl = 'https://restcountries.com/v3.1/';
+  private apiUrl = 'https://restcountries.com/v3.1';
 
   datos: any = {};
 
@@ -26,13 +26,13 @@ export class ApiRequestService {
 
   // Método para obtener todos los países con solo algunos campos
   obtenerPaises(): Observable<any[]> {
-    const url = `${this.apiUrl}all?fields=name,capital,region,flags,population`;
+    const url = `${this.apiUrl}/all?fields=name,capital,region,flags,population`;
     return this.http.get<any[]>(url);
   }
 
   // Método para buscar un país por nombre y obtener solo algunos campos
   obtenerPaisPorNombre(nombre: string): Observable<any> {
-    const url = `${this.apiUrl}name/${nombre}?fields=name,capital,region,flags,population`;
+    const url = `${this.apiUrl}/name/${nombre}?fields=name,capital,region,flags,population`;
     return this.http.get<any>(url);
   }
 }

@@ -1,0 +1,58 @@
+
+    <div class="container py-3">
+      <header>
+        <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+          <h1 class="display-4 fw-normal">Actores</h1>
+          <p class="fs-5 text-muted">Acá vas a encontrar un listado de todos los actores de nuestra base de datos</p>
+        </div>
+
+        
+      </header>
+
+      <main>
+
+        <div class="row">
+
+        <app-tabla-actores 
+          [actores]="listaActores" 
+          (actorSeleccionado)="mostrarDetalle($event)">
+        </app-tabla-actores>
+
+          <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm">
+              <h2>Detalle actor seleccionado</h2>
+              <app-detalle-actor 
+              [actor]="actorSeleccionado">
+            </app-detalle-actor>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm">
+              <h2>Detalle del pais: {{actorSeleccionado?.pais}}</h2>
+              <app-detalle-pais
+              [nombrePais]="actorSeleccionado?.pais">
+            </app-detalle-pais>
+
+            </div>
+          </div>
+          <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm border-primary">
+              <div class="card-header py-3 text-white bg-primary border-primary">
+                <h4 class="my-0 fw-normal">Enterprise</h4>
+              </div>
+              <div class="card-body">
+                <h1 class="card-title pricing-card-title">$29 <small class="text-muted fw-light">/ mo</small></h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                  <li>30 users included</li>
+                  <li>15 GB of storage</li>
+                  <li>Phone and email support</li>
+                  <li>Help center access</li>
+                </ul>
+                <button type="button" class="w-100 btn btn-lg btn-primary">Contact us</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </main>
+    </div>

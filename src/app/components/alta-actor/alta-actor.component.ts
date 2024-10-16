@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
-import { Component, inject, OnInit, OnDestroy, EventEmitter, Output, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { Component, inject, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ActorService } from '../../services/actor.service';
@@ -73,7 +73,7 @@ export class AltaActorComponent {
       apellido: form.apellido,
       edad: form.edad,
       dni: form.dni,
-      pais: this.paisSeleccionado.name
+      pais: this.paisSeleccionado.name.common
     };
   
     this.actorService.agregarActor(nuevoActor)

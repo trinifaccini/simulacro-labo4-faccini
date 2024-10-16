@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Input, Output} from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, EventEmitter, Input, Output} from '@angular/core';
 
 
 @Component({
@@ -8,7 +8,7 @@ import { Component, EventEmitter, Input, Output} from '@angular/core';
   imports: [CommonModule, ],
   templateUrl: './tabla-actores.component.html',
   styleUrls: ['./tabla-actores.component.css'],
-  schemas: []
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 
 export class TablaActoresComponent {
@@ -17,6 +17,7 @@ export class TablaActoresComponent {
   @Output() actorSeleccionado = new EventEmitter<any>();
 
   seleccionarActor(actor: any) {
+    console.log(actor);
     this.actorSeleccionado.emit(actor);
   }
 

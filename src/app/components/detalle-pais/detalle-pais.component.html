@@ -1,1 +1,7 @@
-<p>detalle-pais works!</p>
+<div *ngIf="pais">
+    <p>Nombre comun: {{ pais.name.common}}</p>
+    <p>Capital: {{ pais.capital }}</p>
+    <p>Region: {{ pais.region }}</p>
+    <p>Poblacion: {{ pais.population }}</p>
+    <p><img [src]="pais.flags.png" alt="Bandera del pais" width="100"></p>
+</div>

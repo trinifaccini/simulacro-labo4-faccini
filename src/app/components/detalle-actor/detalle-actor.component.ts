@@ -1,12 +1,19 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnChanges, OnDestroy, SimpleChanges } from '@angular/core';
+import { ActorService } from '../../services/actor.service';
+import { Actor } from '../../models/actor.interface';
+import { CommonModule } from '@angular/common';
+import { Subscription } from 'rxjs';
 
 @Component({
-  selector: 'app-detalle-actor',
   standalone: true,
-  imports: [],
+  selector: 'app-detalle-actor',
   templateUrl: './detalle-actor.component.html',
-  styleUrl: './detalle-actor.component.css'
+  styleUrls: ['./detalle-actor.component.css'],
+  imports: [CommonModule]
 })
+
 export class DetalleActorComponent {
+
+  @Input() actor: any;
 
 }
