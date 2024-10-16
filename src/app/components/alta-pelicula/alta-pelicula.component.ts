@@ -55,7 +55,7 @@ export class AltaPeliculaComponent implements OnInit, OnDestroy {
   async onSubmit(): Promise<void> {
     try {
       this.altaPelicula();
-      this.router.navigate(['/home']);
+      this.router.navigate(['/Peliculas']);
     } catch (e) {
       this.errorMessage = e;
     }

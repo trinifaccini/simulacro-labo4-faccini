@@ -80,7 +80,7 @@ export class AltaActorComponent {
       .then(() => {
         console.log('Actor agregado exitosamente');
         // this.peliculaAgregada.emit(nuevaPelicula); // Emitir la película agregada
-        this.router.navigate(['/home']);
+        this.router.navigate(['/Actores']);
       })
       .catch(error => {
         console.error('Error al agregar actor:', error);

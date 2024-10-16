@@ -15,8 +15,11 @@ export class TablaActoresComponent {
 
   @Input() actores: any[] = [];
   @Output() actorSeleccionado = new EventEmitter<any>();
+  actorSeleccionadoLista: any;
+
 
   seleccionarActor(actor: any) {
+    this.actorSeleccionadoLista = actor;
     this.actorSeleccionado.emit(actor);
   }
 

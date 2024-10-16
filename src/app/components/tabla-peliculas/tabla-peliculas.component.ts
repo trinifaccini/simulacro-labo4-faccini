@@ -16,8 +16,10 @@ export class TablaPeliculasComponent {
 
   @Input() peliculas: any[] = [];
   @Output() peliculaSeleccionada = new EventEmitter<any>();
+  peliculaSeleccionadaLista: any;
 
   seleccionarPelicula(pelicula: any) {
+    this.peliculaSeleccionadaLista = pelicula;
     this.peliculaSeleccionada.emit(pelicula);    
   }
 

@@ -22,6 +22,10 @@ export class PeliculaService {
       map(actions => actions.map(a => {
         let data = a.payload.doc.data() as Pelicula;
         data.uid = a.payload.doc.id;
+
+        if (data.fecha_estreno) {
+          data.fecha_estreno = (data.fecha_estreno as any).toDate();
+        }
         return {...data };
       }))
     );
@@ -34,6 +38,11 @@ export class PeliculaService {
       map(actions => actions.map(a => {
         let data = a.payload.doc.data() as Pelicula;
         data.uid = a.payload.doc.id;
+
+        if (data.fecha_estreno) {
+          data.fecha_estreno = (data.fecha_estreno as any).toDate();
+        }
+
         return { ...data };
       }))
     );
