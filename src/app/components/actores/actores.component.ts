@@ -11,11 +11,12 @@ import { Pelicula } from '../../models/pelicula.interface';
 import { TablaActoresComponent } from '../tabla-actores/tabla-actores.component';
 import { DetalleActorComponent } from '../detalle-actor/detalle-actor.component';
 import { DetallePaisComponent } from '../detalle-pais/detalle-pais.component';
+import { PeliculasActorComponent } from '../peliculas-actor/peliculas-actor.component';
 
 @Component({
   selector: 'app-actores',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, HttpClientModule, TablaActoresComponent, DetalleActorComponent, DetallePaisComponent],
+  imports: [CommonModule, ReactiveFormsModule, HttpClientModule, TablaActoresComponent, DetalleActorComponent, DetallePaisComponent, PeliculasActorComponent],
   templateUrl: './actores.component.html',
   styleUrls: ['./actores.component.css'],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
@@ -45,12 +46,10 @@ export class ActoresComponent {
   obtenerActores() {
     this.actoresSubscription = this.actorService.obtenerActores().subscribe(actores => {
       this.listaActores = actores;
-      console.log(this.listaActores);
     });
   }
 
   mostrarDetalle(actor: any) {
-    console.log(actor);
     this.actorSeleccionado = actor;
   }
 

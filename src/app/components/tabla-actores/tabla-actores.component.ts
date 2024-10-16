@@ -17,7 +17,6 @@ export class TablaActoresComponent {
   @Output() actorSeleccionado = new EventEmitter<any>();
 
   seleccionarActor(actor: any) {
-    console.log(actor);
     this.actorSeleccionado.emit(actor);
   }
 

@@ -10,7 +10,7 @@ import { CommonModule } from '@angular/common';
   templateUrl: './detalle-pais.component.html',
   styleUrl: './detalle-pais.component.css'
 })
-export class DetallePaisComponent implements OnInit , OnChanges {
+export class DetallePaisComponent implements   OnChanges {
 
   @Input() nombrePais: any;
   pais: any;
@@ -19,14 +19,10 @@ export class DetallePaisComponent implements OnInit , OnChanges {
 
   constructor(private paisService: ApiRequestService) {}
 
-  ngOnInit(): void {
-      console.log("hola aca");
-      
-  }
-
   ngOnChanges(changes: SimpleChanges): void {
 
-    console.log("holitas");
+    console.log("aca detalle pais");
+    
     
     if (changes['nombrePais'] && changes['nombrePais'].currentValue) {
       

@@ -26,6 +26,21 @@ export class PeliculaService {
       }))
     );
   }
+
+  obtenerPeliculasPorProtagonista(protagonistaId: string): Observable<Pelicula[]> {
+    return this.firestore.collection('peliculas', ref => 
+      ref.where('protagonista_id', '==', protagonistaId)
+    ).snapshotChanges().pipe(
+      map(actions => actions.map(a => {
+        let data = a.payload.doc.data() as Pelicula;
+        data.uid = a.payload.doc.id;
+        return { ...data };
+      }))
+    );
+  }
+
+
+  
 }
 
 
